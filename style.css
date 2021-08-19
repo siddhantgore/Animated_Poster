@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto',sans-serif;
+}
+
+*:before,
+*:after{
+    box-sizing: border-box;
+}
+
+:root{
+    --primary:yellow;
+    --accent:red;
+    --negative:hsl(0,0%,100%);
+    --shadow:hsl(0,0%,0%);
+}
+body{
+    width: 100%;
+    display: grid;
+    grid:repeat(12,80px) / repeat(18,80px);
+    gap:10px;
+}
+nav{
+    background-color:blue;
+    grid-area: 1/1/span 1/ 15;
+    height: 40px;
+    word-spacing: 80px;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+    transform-origin: left;
+    border-radius: 0 50px 50px 0;
+    transform: scaleX(0);
+    animation: aniX 2s ease-out 1s forwards;
+}
+nav a{
+    text-decoration: none;
+    color:black;
+    overflow: hidden;
+}
+h1,p{
+    color: var(--shadow);
+    
+}
+h1{
+    grid-area: 5 / 4 / 13 / span 9;
+    opacity: 0;
+    animation: appear 2s ease-out 2s forwards;
+    font-weight: bolder;
+    font-size: 45px;
+}
+
+p{
+    grid-area: 6 / 1 / 13 / span 9;
+    opacity: 0;
+    animation: appear 2s ease-out 2.5s forwards;
+    margin-left: 20px;
+    font-size: 20px;
+}
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
+}
+header.first{
+    background-color: var(--primary);
+    border-radius: 0 50px 50px 0;
+    grid-area: 3 / 1 / span2 / span 8;
+    height: 50px;
+    align-self: flex-start;
+    transform: scaleX(0);
+    animation: aniX 2s ease-out 1s forwards;
+    transform-origin: left;
+}
+@keyframes aniX{
+    to{
+        transform: scaleX(1);
+    }
+}
+header.sec{
+    background-color: var(--primary);
+    border-radius: 0 50px 50px 0;
+    grid-area: 4 / 1 / span2 / span 7;
+    height: 50px;
+    align-self: flex-start;
+    transform: scaleX(0);
+    animation: aniX 2s ease-out 1s forwards;
+    transform-origin: left;
+}
+@keyframes aniX{
+    to{
+        transform: scaleX(1);
+    }
+}
+
+header.td{
+    background-color: var(--primary);
+    border-radius: 0 50px 50px 0;
+    grid-area: 2 / 1 / span2 / span 9;
+    height: 50px;
+    align-self: flex-start;
+    transform: scaleX(0);
+    animation: aniX 2s ease-out 1s forwards;
+    transform-origin: left;
+}
+@keyframes aniX{
+    to{
+        transform: scaleX(1);
+    }
+}
+
+
+aside{
+    background-color: var(--primary);
+    border-radius: 50px 50px 50px 50px;
+    width: 20px;
+    grid-area: 5 / 17 / 11 / span 1;
+    transform: scaleY(0);
+    justify-self: flex-end;
+    animation: aniY 2s ease-out 1s forwards;  
+}
+@keyframes aniY{
+    to{
+        transform: scaleY(1);
+    }
+}
+
+main{
+    background-color: rgb(217, 255, 0);
+    border-radius: 0 50px 0 0;
+    grid-area: 5 / 1 / 11 / span 9;
+    transform-origin:bottom left;
+    transform: scale(0);
+    animation: ani 2s ease-out 1s forwards;   
+}
+@keyframes ani{
+    to{
+        transform: scale(1);
+    }
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
+}
+button{
+    outline: none;
+    border:none;
+    height: 40px;
+    grid-area: 1 / 16 / span 1 /span 2;
+    align-self: flex-start;
+    background-color: var(--accent);
+    color:white;
+    margin-top: 2px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 300;
+    cursor: pointer;
+    opacity: 0;
+    animation: appear 2s ease-in 0.5s forwards;
+}
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
+}
+button:hover{
+    font-size: 20px;
+    font-weight: 500;
+    height: 41px;
+}
+
+#first{
+    font-size: 40px;
+    font-weight:300;
+    grid-area: 3/4/span 1/span 5;
+    justify-self: flex-end;
+    opacity: 0;
+    animation: appear 2s ease-out 2s forwards;
+}
+
+#sec{
+    font-size: 40px;
+    font-weight: 100;
+    grid-area: 4 / 1 / span2 / span 7;
+    justify-self: flex-end;
+    opacity: 0;
+    animation: appear 2s ease-out 2s forwards;
+}
+#td{
+    font-size: 40px;
+    font-weight: 400;
+    grid-area: 2 / 1 / span2 / span 9;
+    justify-self: flex-end;
+    opacity: 0;
+    animation: appear 2s ease-out 2s 1 forwards;
+}
+
+h2{
+    font-size: 20px;
+    font-weight: 300;
+    grid-area: 5 / 17 / 11 / span 1;
+    opacity: 0;
+    animation: appear 2s ease-out 2s 1 forwards;
+    writing-mode: vertical-rl;
+    align-self: center;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+}
+p.p1{
+    font-size: 20px;
+    opacity: 0;
+    animation: appear 2s ease-out 2s forwards;
+    grid-area: 3/11/span 1/span 5;
+}
+h3{
+    font-size: 40px;
+    opacity: 0;
+    animation: appear 2s ease-out 1.8s forwards;
+    grid-area: 5/12/span 1/span 5;
+    justify-self:flex-start;
+}
+img.f1{
+    height: 120px;
+    width: 120px;
+    grid-area: 6/11/span 1/span 3;;
+}
+img.f2{
+    height: 100px;
+    width: 120px;
+    grid-area: 6/13/span 1/span 3;;
+}
+img.f3{
+    height: 100px;
+    width: 120px;
+    grid-area: 6/15/span 1/span 3;;
+}
+img.f4{
+    height: 120px;
+    width: 120px;
+    grid-area: 7/13/span 1/span 3;;
+}
+img.f1,img.f2,img.f3,img.f4{
+    opacity: 0;
+    animation: appear 2s ease-out 2.5s forwards;
+}
